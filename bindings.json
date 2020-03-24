@@ -1,0 +1,5 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Ctrl-/": "lua:comment.comment",
+    "F6": "command-edit:gorename "
+}
