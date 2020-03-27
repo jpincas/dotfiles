@@ -124,8 +124,6 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 # Use starship as prompt
 eval "$(starship init zsh)"
 
-# Brrot
-source /home/jon/.config/broot/launcher/bash/br
 
 #Terminal Settings
 export COLORTERM=truecolor
