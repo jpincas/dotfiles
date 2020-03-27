@@ -30,16 +30,18 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ }
 
-" Disable arrow keys
-nnoremap <up>    <nop>
-nnoremap <down>  <nop>
-nnoremap <left>  <nop>
-nnoremap <right> <nop>
-inoremap <up>    <nop>
-inoremap <down>  <nop>
-inoremap <left>  <nop>
-inoremap <right> <nop>
+" arrow keys for pane switching
+nnoremap <up>    <c-w>k
+nnoremap <down>  <c-w>j 
+nnoremap <left>  <c-w>h
+nnoremap <right> <c-w>l
+inoremap <up>    <c-w>k
+inoremap <down>  <c-w>j 
+inoremap <left>  <c-w>h
+inoremap <right> <c-w>l
 
+" tab for cycling between last used buffer
+nnoremap <tab> <c-^>
 
 " GO PLUGIN
 let g:go_auto_type_info = 0
@@ -69,3 +71,23 @@ command! MakeTags !ctags -R .
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>
 vnoremap <c-s> <Esc>:w<CR>
+
+" Insert blank lines in normal mode
+" The next two lines are copy/paste from SO
+" to stop some kind of interference in command mode
+:autocmd CmdwinEnter * nnoremap <CR> <CR>
+:autocmd BufReadPost quickfix nnoremap <CR> <CR>
+" " And to make S-Enter work you need to make some changes to how Alacritty
+" sends key combos
+" - { key: Return,   mods: Shift,   chars: '\x1b[13;2u' }
+" - { key: Return,   mods: Control, chars: '\x1b[13;5u' }
+nnoremap <CR> o<Esc>
+nnoremap <S-CR> O<Esc>
+
+
+
+
+
+
+
+
