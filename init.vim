@@ -19,6 +19,7 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'arcticicestudio/nord-vim'
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+	Plug 'vim-scripts/Toggle'
 call plug#end()
 
 " Stop autocomplete pooping up a help pane
@@ -84,7 +85,8 @@ vnoremap <c-s> <Esc>:w<CR>
 nnoremap <CR> o<Esc>
 nnoremap <S-CR> O<Esc>
 
-
+" ignore variables (Go/Elm)
+nnoremap _ cw_<Esc>
 
 
 
