@@ -125,10 +125,11 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 # Use starship as prompt
 eval "$(starship init zsh)"
 
+# npm
+export PATH=~/.npm-global/bin:$PATH
 
 #Terminal Settings
 export COLORTERM=truecolor
-export TERM=xterm-256color
-export MICRO_TRUECOLOR=1
+export TERM=tmux-256color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

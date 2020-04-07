@@ -1,15 +1,13 @@
-" Remap escape
-:imap jj <Esc>
-
-" Line numbers
+" Basics 
+let mapleader =  ' '
 set number
 set relativenumber
+syntax enable
+filetype plugin on
+set nowrap
 
 " Allow dirty buffers in the background
 set hidden
-
-" Disable line wrapping
-set nowrap
 
 " Bassically a fuzzy finder
 set path+=**
@@ -20,7 +18,11 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'arcticicestudio/nord-vim'
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'vim-scripts/Toggle'
+	Plug 'tpope/vim-surround'
+	Plug 'dense-analysis/ale'
+	Plug 'mattn/emmet-vim'
 call plug#end()
+
 
 " Stop autocomplete pooping up a help pane
 set completeopt-=preview
@@ -62,12 +64,6 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_fields = 1
 let g:go_auto_type_info = 0
 
-" Not sure
-set nocompatible
-syntax enable
-filetype plugin on
-command! MakeTags !ctags -R .
-
 " Remap ctrl-s to save
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>
@@ -88,8 +84,21 @@ nnoremap <S-CR> O<Esc>
 " ignore variables (Go/Elm)
 nnoremap _ cw_<Esc>
 
+" search highlighting
+:map <leader>h :noh<CR>
 
+" ale
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+	\ 'html': ['prettier'],
+	\ 'css': ['prettier']
+	\ }
 
+" emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<leader>'
 
-
-
+" Not sure
+set nocompatible
+command! MakeTags !ctags -R .
