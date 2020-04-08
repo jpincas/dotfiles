@@ -1,37 +1,19 @@
-" Basics 
+" BASICS 
+
 let mapleader =  ' '
 set number
 set relativenumber
 syntax enable
 filetype plugin on
 set nowrap
-
 " Allow dirty buffers in the background
 set hidden
-
 " Bassically a fuzzy finder
 set path+=**
-
-" Plugin manager
-call plug#begin('~/local/share/nvim/plugged')
-	Plug 'itchyny/lightline.vim'
-	Plug 'arcticicestudio/nord-vim'
-	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-	Plug 'vim-scripts/Toggle'
-	Plug 'tpope/vim-surround'
-	Plug 'dense-analysis/ale'
-	Plug 'mattn/emmet-vim'
-call plug#end()
-
-
 " Stop autocomplete pooping up a help pane
 set completeopt-=preview
 
-" Set colorscheme and lightline colorscheme
-colorscheme nord
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
+" NAVIGATION
 
 " arrow keys for pane switching
 nnoremap <up>    <c-w>k
@@ -42,11 +24,31 @@ inoremap <up>    <c-w>k
 inoremap <down>  <c-w>j 
 inoremap <left>  <c-w>h
 inoremap <right> <c-w>l
-
 " tab for cycling between last used buffer
 nnoremap <tab> <c-^>
 
-" GO PLUGIN
+" PLUGIN MANAGER
+
+call plug#begin('~/local/share/nvim/plugged')
+	Plug 'itchyny/lightline.vim'
+	Plug 'arcticicestudio/nord-vim'
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+	Plug 'vim-scripts/Toggle'
+	Plug 'tpope/vim-surround'
+	Plug 'dense-analysis/ale'
+	Plug 'mattn/emmet-vim'
+	Plug 'preservim/nerdtree'
+call plug#end()
+
+" PLUGIN SETTINGS
+
+" Set colorscheme and lightline colorscheme
+colorscheme nord
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
+
+" vim-go setting
 let g:go_auto_type_info = 0
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
@@ -63,6 +65,20 @@ let g:go_highlight_variable_assignments = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_fields = 1
 let g:go_auto_type_info = 0
+
+" ale
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+	\ 'html': ['prettier'],
+	\ 'css': ['prettier']
+	\ }
+
+" emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<leader>'
+
+" CUSTOM KEYBINDINGS
 
 " Remap ctrl-s to save
 nnoremap <c-s> :w<CR>
@@ -83,21 +99,12 @@ nnoremap <S-CR> O<Esc>
 
 " ignore variables (Go/Elm)
 nnoremap _ cw_<Esc>
-
 " search highlighting
 :map <leader>h :noh<CR>
-
-" ale
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-	\ 'html': ['prettier'],
-	\ 'css': ['prettier']
-	\ }
-
-" emmet
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_leader_key='<leader>'
+" quick line duplicate
+:map <leader>y yyp
+" nerdtree
+:map <leader>t :NERDTreeToggle<CR>
 
 " Not sure
 set nocompatible
