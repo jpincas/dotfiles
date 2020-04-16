@@ -130,6 +130,7 @@ export PATH=~/.npm-global/bin:$PATH
 
 #Terminal Settings
 export COLORTERM=truecolor
-export TERM=tmux-256color
+# Seens that the TERM needs to be xterm rather than tmux else it starts repeating commands with a %
+export TERM=xterm-256color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
