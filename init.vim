@@ -1,5 +1,6 @@
 " BASICS 
 
+set nocompatible
 let mapleader =  ' '
 set number
 set relativenumber
@@ -16,14 +17,15 @@ set completeopt-=preview
 " NAVIGATION
 
 " arrow keys for pane switching
-nnoremap <up>    <c-w>k
-nnoremap <down>  <c-w>j 
-nnoremap <left>  <c-w>h
-nnoremap <right> <c-w>l
-inoremap <up>    <c-w>k
-inoremap <down>  <c-w>j 
-inoremap <left>  <c-w>h
-inoremap <right> <c-w>l
+nnoremap <c-k>    <c-w>k
+nnoremap <c-j>  <c-w>j 
+nnoremap <c-h>  <c-w>h
+nnoremap <c-l> <c-w>l
+inoremap <c-k>    <Esc><c-w>k
+inoremap <c-j>  <Esc><c-w>j 
+inoremap <c-h>  <Esc><c-w>h
+inoremap <c-l> <Esc><c-w>l
+"
 " tab for cycling between last used buffer
 nnoremap <tab> <c-^>
 
@@ -38,6 +40,7 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'dense-analysis/ale'
 	Plug 'mattn/emmet-vim'
 	Plug 'preservim/nerdtree'
+	Plug 'elmcast/elm-vim'
 call plug#end()
 
 " PLUGIN SETTINGS
@@ -69,14 +72,17 @@ let g:go_auto_type_info = 0
 " ale
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-	\ 'html': ['prettier'],
-	\ 'css': ['prettier']
+	\ 'css': ['prettier'],
+	\ 'scss': ['prettier'],
+	\ 'html': ['html-beautify'],
+	\ 'python': ['yapf'],
+	\ 'json': ['prettier']
 	\ }
 
 " emmet
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_leader_key='<leader>'
+autocmd FileType html,css,scss EmmetInstall
+let g:user_emmet_expandabbr_key = '<C-e>'
 
 " CUSTOM KEYBINDINGS
 
@@ -97,15 +103,21 @@ vnoremap <c-s> <Esc>:w<CR>
 nnoremap <CR> o<Esc>
 nnoremap <S-CR> O<Esc>
 
-" ignore variables (Go/Elm)
+" Custom key remaps
 nnoremap _ cw_<Esc>
-" search highlighting
 :map <leader>h :noh<CR>
-" quick line duplicate
 :map <leader>y yyp
-" nerdtree
-:map <leader>t :NERDTreeToggle<CR>
+:map <leader>n :NERDTreeToggle<CR>
+:map <leader>r :so $MYVIMRC<CR>
+:map <leader>t :terminal<CR>
+:tnoremap <Esc> <C-\><c-n>
 
 " Not sure
-set nocompatible
 command! MakeTags !ctags -R .
+
+" Cursor line only on active splits
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END  
