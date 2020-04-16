@@ -4,6 +4,7 @@ set nocompatible
 let mapleader =  ' '
 set number
 set relativenumber
+au TermOpen * setlocal nonumber norelativenumber
 syntax enable
 filetype plugin on
 set nowrap
@@ -25,6 +26,10 @@ inoremap <c-k>    <Esc><c-w>k
 inoremap <c-j>  <Esc><c-w>j 
 inoremap <c-h>  <Esc><c-w>h
 inoremap <c-l> <Esc><c-w>l
+tnoremap <c-k>    <Esc><c-w>k
+tnoremap <c-j>  <Esc><c-w>j 
+tnoremap <c-h>  <Esc><c-w>h
+tnoremap <c-l> <Esc><c-w>l
 "
 " tab for cycling between last used buffer
 nnoremap <tab> <c-^>
