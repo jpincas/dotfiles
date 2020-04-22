@@ -134,3 +134,4 @@ export COLORTERM=truecolor
 export TERM=xterm-256color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PAKK_SCRIPT_API='https://tapaslunch-clouddev.pakk.io:3010/adminapi'

@@ -18,18 +18,18 @@ set completeopt-=preview
 " NAVIGATION
 
 " arrow keys for pane switching
-nnoremap <c-k>    <c-w>k
-nnoremap <c-j>  <c-w>j 
-nnoremap <c-h>  <c-w>h
-nnoremap <c-l> <c-w>l
-inoremap <c-k>    <Esc><c-w>k
-inoremap <c-j>  <Esc><c-w>j 
-inoremap <c-h>  <Esc><c-w>h
-inoremap <c-l> <Esc><c-w>l
-tnoremap <c-k>    <Esc><c-w>k
-tnoremap <c-j>  <Esc><c-w>j 
-tnoremap <c-h>  <Esc><c-w>h
-tnoremap <c-l> <Esc><c-w>l
+nnoremap <up>    <c-w>k
+nnoremap <down>  <c-w>j 
+nnoremap <left>  <c-w>h
+nnoremap <right> <c-w>l
+inoremap <up>    <Esc><c-w>k
+inoremap <down>  <Esc><c-w>j 
+inoremap <left>  <Esc><c-w>h
+inoremap <right> <Esc><c-w>l
+tnoremap <up>    <Esc><c-w>k
+tnoremap <down>  <Esc><c-w>j 
+tnoremap <left>  <Esc><c-w>h
+tnoremap <right> <Esc><c-w>l
 "
 " tab for cycling between last used buffer
 nnoremap <tab> <c-^>
@@ -112,9 +112,9 @@ nnoremap <S-CR> O<Esc>
 nnoremap _ cw_<Esc>
 :map <leader>h :noh<CR>
 :map <leader>y yyp
-:map <leader>n :NERDTreeToggle<CR>
+:map <leader>t :NERDTreeToggle<CR>
 :map <leader>r :so $MYVIMRC<CR>
-:map <leader>t :terminal<CR>
+inoremap <c-z>z <Esc>zzi
 :tnoremap <Esc> <C-\><c-n>
 
 " Not sure
