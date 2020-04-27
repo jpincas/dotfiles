@@ -46,9 +46,12 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'mattn/emmet-vim'
 	Plug 'preservim/nerdtree'
 	Plug 'elmcast/elm-vim'
+	Plug 'bkad/CamelCaseMotion'
 call plug#end()
 
 " PLUGIN SETTINGS
+
+let g:camelcasemotion_key = '<leader>'
 
 " Set colorscheme and lightline colorscheme
 colorscheme nord
