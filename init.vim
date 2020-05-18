@@ -82,7 +82,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 	\ 'css': ['prettier'],
 	\ 'scss': ['prettier'],
-	\ 'html': ['html-beautify'],
+	"\ 'html': ['html-beautify'],
 	\ 'python': ['yapf'],
 	\ 'json': ['prettier']
 	\ }
@@ -129,3 +129,4 @@ augroup CursorLineOnlyInActiveWindow
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END  
+
