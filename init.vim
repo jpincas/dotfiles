@@ -14,6 +14,8 @@ set hidden
 set path+=**
 " Stop autocomplete pooping up a help pane
 set completeopt-=preview
+" use indent files in the /indent directory
+filetype plugin indent on
 
 " NAVIGATION
 
@@ -39,7 +41,6 @@ nnoremap <tab> <c-^>
 call plug#begin('~/local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'arcticicestudio/nord-vim'
-	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'vim-scripts/Toggle'
 	Plug 'tpope/vim-surround'
 	Plug 'dense-analysis/ale'
@@ -58,25 +59,7 @@ colorscheme nord
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ }
-
-" vim-go setting
-let g:go_auto_type_info = 0
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_function_parameters = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1  
-let g:go_highlight_types = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_highlight_format_strings = 1
-let g:go_highlight_fields = 1
-let g:go_auto_type_info = 0
-
+"
 " ale
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
@@ -84,7 +67,8 @@ let g:ale_fixers = {
 	\ 'scss': ['prettier'],
 	"\ 'html': ['html-beautify'],
 	\ 'python': ['yapf'],
-	\ 'json': ['prettier']
+	\ 'json': ['prettier'],
+	\ 'go': ['gofmt', 'goimports']
 	\ }
 
 " emmet
@@ -104,6 +88,7 @@ vnoremap <c-s> <Esc>:w<CR>
 " to stop some kind of interference in command mode
 :autocmd CmdwinEnter * nnoremap <CR> <CR>
 :autocmd BufReadPost quickfix nnoremap <CR> <CR>
+"
 " " And to make S-Enter work you need to make some changes to how Alacritty
 " sends key combos
 " - { key: Return,   mods: Shift,   chars: '\x1b[13;2u' }
