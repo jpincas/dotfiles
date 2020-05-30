@@ -4,7 +4,7 @@ set nocompatible
 let mapleader =  ' '
 set number
 set relativenumber
-au TermOpen * setlocal nonumber norelativenumber
+" au TermOpen * setlocal nonumber norelativenumber
 syntax enable
 filetype plugin on
 set nowrap
@@ -54,6 +54,7 @@ call plug#end()
 
 let g:camelcasemotion_key = '<leader>'
 
+" vim is a colourscheme that lets the terminal's colourscheme come through
 colorscheme dim
 "
 " ale
