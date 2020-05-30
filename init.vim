@@ -39,7 +39,6 @@ nnoremap <tab> <c-^>
 " PLUGIN MANAGER
 
 call plug#begin('~/local/share/nvim/plugged')
-	Plug 'itchyny/lightline.vim'
 	Plug 'jeffkreeftmeijer/vim-dim'
 	Plug 'vim-scripts/Toggle'
 	Plug 'tpope/vim-surround'
@@ -54,11 +53,6 @@ call plug#end()
 " PLUGIN SETTINGS
 
 let g:camelcasemotion_key = '<leader>'
-
-" Set colorscheme and lightline colorscheme
-let g:lightline = {
-	\ 'colorscheme': 'one',
-	\ }
 
 colorscheme dim
 "

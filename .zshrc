@@ -128,7 +128,7 @@ export PATH=~/.npm-global/bin:$PATH
 #Terminal Settings
 export COLORTERM=truecolor
 # Seens that the TERM needs to be xterm rather than tmux else it starts repeating commands with a %
-export TERM=xterm-256color
+export TERM=tmux-256color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PAKK_SCRIPT_API='https://tapaslunch-clouddev.pakk.io:3010/adminapi'
