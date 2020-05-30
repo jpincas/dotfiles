@@ -40,7 +40,7 @@ nnoremap <tab> <c-^>
 
 call plug#begin('~/local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
-	Plug 'arcticicestudio/nord-vim'
+	Plug 'jeffkreeftmeijer/vim-dim'
 	Plug 'vim-scripts/Toggle'
 	Plug 'tpope/vim-surround'
 	Plug 'dense-analysis/ale'
@@ -48,6 +48,7 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'preservim/nerdtree'
 	Plug 'elmcast/elm-vim'
 	Plug 'bkad/CamelCaseMotion'
+	Plug 'mtth/scratch.vim'
 call plug#end()
 
 " PLUGIN SETTINGS
@@ -55,10 +56,11 @@ call plug#end()
 let g:camelcasemotion_key = '<leader>'
 
 " Set colorscheme and lightline colorscheme
-colorscheme nord
 let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
+	\ 'colorscheme': 'one',
+	\ }
+
+colorscheme dim
 "
 " ale
 let g:ale_fix_on_save = 1
@@ -101,7 +103,10 @@ nnoremap _ cw_<Esc>
 :map <leader>h :noh<CR>
 :map <leader>y yyp
 :map <leader>t :NERDTreeToggle<CR>
+:map <leader>n :NERDTreeRefreshRoot<CR>
 :map <leader>r :so $MYVIMRC<CR>
+:map <leader>s :Scratch<CR>
+:map <leader>bj i`json:"" bson:""`<Esc>4F"a
 inoremap <c-z>z <Esc>zzi
 :tnoremap <Esc> <C-\><c-n>
 
