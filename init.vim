@@ -16,9 +16,9 @@ set path+=**
 set completeopt-=preview
 " use indent files in the /indent directory
 filetype plugin indent on
-
+	
 " NAVIGATION
-
+			
 " arrow keys for pane switching
 nnoremap <up>    <c-w>k
 nnoremap <down>  <c-w>j 
@@ -39,7 +39,8 @@ nnoremap <tab> <c-^>
 " PLUGIN MANAGER
 
 call plug#begin('~/local/share/nvim/plugged')
-	Plug 'jeffkreeftmeijer/vim-dim'
+	Plug 'itchyny/lightline.vim'
+	Plug 'arcticicestudio/nord-vim'
 	Plug 'vim-scripts/Toggle'
 	Plug 'tpope/vim-surround'
 	Plug 'dense-analysis/ale'
@@ -48,6 +49,7 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'elmcast/elm-vim'
 	Plug 'bkad/CamelCaseMotion'
 	Plug 'mtth/scratch.vim'
+	Plug 'gcmt/taboo.vim'
 call plug#end()
 
 " PLUGIN SETTINGS
@@ -55,7 +57,11 @@ call plug#end()
 let g:camelcasemotion_key = '<leader>'
 
 " vim is a colourscheme that lets the terminal's colourscheme come through
-colorscheme dim
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
+
+colorscheme nord
 "
 " ale
 let g:ale_fix_on_save = 1
