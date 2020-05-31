@@ -178,60 +178,60 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (Nord)
-#colors:
-#  primary:
-#    background: '0x2E3440'
-#    foreground: '0xD8DEE9'
-#  cursor:
-#    text: '0xE5E9F0'
-#    cursor: '0xBF616A'
-#  normal:
-#    black: '0x3B4252'
-#    red: '0xBF616A'
-#    green: '0xA3BE8C'
-#    yellow: '0xEBCB8B'
-#    blue: '0x81A1C1'
-#    magenta: '0xB48EAD'
-#    cyan: '0x88C0D0'
-#    white: '0xE5E9F0'
-#  bright:
-#    black: '0x4C566A'
-#    red: '0xBF616A'
-#    green: '0xA3BE8C'
-#    yellow: '0xEBCB8B'
-#    blue: '0x81A1C1'
-#    magenta: '0xB48EAD'
-#    cyan: '0x8FBCBB'
-#    white: '0xECEFF4'
+colors:
+  primary:
+    background: '0x2E3440'
+    foreground: '0xD8DEE9'
+  cursor:
+    text: '0xE5E9F0'
+    cursor: '0xBF616A'
+  normal:
+    black: '0x3B4252'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x88C0D0'
+    white: '0xE5E9F0'
+  bright:
+    black: '0x4C566A'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x8FBCBB'
+    white: '0xECEFF4'
 
 # Colors (Tinacious)
-colors:
-  # Default colors
-  primary:
-    background: '0x1D1D26'
-    foreground: '0xB3B3D4'
-
-  # Normal colors
-  normal:
-    black:   '0x10100E'
-    red:     '0xFF3399'
-    green:   '0x00D364'
-    yellow:  '0xFFCC66'
-    blue:    '0x00BFFF'
-    magenta: '0xFF3399'
-    cyan:    '0x00CED1'
-    white:   '0xC6C6C4'
-
-  # Bright colors
-  bright:
-    black:   '0x696969'
-    red:     '0xFF3399'
-    green:   '0x00D364'
-    yellow:  '0xFFCC66'
-    blue:    '0x00BFFF'
-    magenta: '0xFF3399'
-    cyan:    '0x00CED1'
-    white:   '0xFFFAFA'
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x1D1D26'
+#    foreground: '0xB3B3D4'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x10100E'
+#    red:     '0xFF3399'
+#    green:   '0x00D364'
+#    yellow:  '0xFFCC66'
+#    blue:    '0x00BFFF'
+#    magenta: '0xFF3399'
+#    cyan:    '0x00CED1'
+#    white:   '0xC6C6C4'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x696969'
+#    red:     '0xFF3399'
+#    green:   '0x00D364'
+#    yellow:  '0xFFCC66'
+#    blue:    '0x00BFFF'
+#    magenta: '0xFF3399'
+#    cyan:    '0x00CED1'
+#    white:   '0xFFFAFA'
 
 
 
