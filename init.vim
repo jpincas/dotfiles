@@ -16,9 +16,9 @@ set path+=**
 set completeopt-=preview
 " use indent files in the /indent directory
 filetype plugin indent on
-
+	
 " NAVIGATION
-
+			
 " arrow keys for pane switching
 nnoremap <up>    <c-w>k
 nnoremap <down>  <c-w>j 
