@@ -49,6 +49,7 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'elmcast/elm-vim'
 	Plug 'bkad/CamelCaseMotion'
 	Plug 'mtth/scratch.vim'
+	Plug 'gcmt/taboo.vim'
 call plug#end()
 
 " PLUGIN SETTINGS
