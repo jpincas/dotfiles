@@ -28,11 +28,18 @@ inoremap <up>    <Esc><c-w>k
 inoremap <down>  <Esc><c-w>j 
 inoremap <left>  <Esc><c-w>h
 inoremap <right> <Esc><c-w>l
-tnoremap <up>    <Esc><c-w>k
-tnoremap <down>  <Esc><c-w>j 
-tnoremap <left>  <Esc><c-w>h
-tnoremap <right> <Esc><c-w>l
 "
+" Tab navigation wi 2th nubmers
+nnoremap <leader>1 1gt 
+nnoremap <leader>2 2gt 
+nnoremap <leader>3 3gt 
+nnoremap <leader>4 4gt 
+nnoremap <leader>5 5gt 
+nnoremap <leader>6 6gt 
+nnoremap <leader>7 7gt 
+nnoremap <leader>8 8gt 
+nnoremap <leader>9 9gt 
+
 " tab for cycling between last used buffer
 nnoremap <tab> <c-^>
 
@@ -53,6 +60,8 @@ call plug#begin('~/local/share/nvim/plugged')
 call plug#end()
 
 " PLUGIN SETTINGS
+let g:taboo_tab_format = " %N:%f%m "
+let g:taboo_renamed_tab_format = " [%N:%l]%m "
 
 let g:camelcasemotion_key = '<leader>'
 
