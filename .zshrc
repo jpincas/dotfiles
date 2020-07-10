@@ -6,7 +6,7 @@ export PATH=$PATH:/usr/local/bin/dart-sass
 export ZSH="/home/jon/.oh-my-zsh"
 
 # Pakk
-export PAKK_ENV="clouddev"
+export PAKK_ENV="local"
 export CLOUDDEV_START_PORT=3000
 
 
@@ -105,10 +105,10 @@ export EDITOR="$VISUAL"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias m="pakkmicro"
 alias nvim="nvim.appimage"
 alias vim="nvim"
 alias v="nvim"
+alias sv="sudo nvim.appimage"
 alias mykill="pkill -u $USER"
 alias vimcfg="$EDITOR ~/.config/nvim/init.vim"
 alias zshcfg="$EDITOR ~/.zshrc"
@@ -125,6 +125,10 @@ eval "$(starship init zsh)"
 # npm
 export PATH=~/.npm-global/bin:$PATH
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
 #Terminal Settings
 export COLORTERM=truecolor
 # Seens that the TERM needs to be xterm rather than tmux else it starts repeating commands with a %

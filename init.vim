@@ -4,7 +4,7 @@ set nocompatible
 let mapleader =  ' '
 set number
 set relativenumber
-" au TermOpen * setlocal nonumber norelativenumber
+au TermOpen * setlocal nonumber norelativenumber
 syntax enable
 filetype plugin on
 set nowrap
@@ -16,7 +16,9 @@ set path+=**
 set completeopt-=preview
 " use indent files in the /indent directory
 filetype plugin indent on
-	
+" set splits to open on right by default
+set splitright
+
 " NAVIGATION
 			
 " arrow keys for pane switching
@@ -43,6 +45,13 @@ nnoremap <leader>9 9gt
 " tab for cycling between last used buffer
 nnoremap <tab> <c-^>
 
+" file explorer
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 10
+
 " PLUGIN MANAGER
 
 call plug#begin('~/local/share/nvim/plugged')
@@ -52,7 +61,6 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'dense-analysis/ale'
 	Plug 'mattn/emmet-vim'
-	Plug 'preservim/nerdtree'
 	Plug 'elmcast/elm-vim'
 	Plug 'bkad/CamelCaseMotion'
 	Plug 'mtth/scratch.vim'
@@ -112,8 +120,11 @@ nnoremap <S-CR> O<Esc>
 nnoremap _ cw_<Esc>
 :map <leader>h :noh<CR>
 :map <leader>y yyp
-:map <leader>t :NERDTreeToggle<CR>
-:map <leader>n :NERDTreeRefreshRoot<CR>
+:map <leader>f :Lexplore<CR>
+
+" open a terminal in a 40 char-width vsplit and go straight into insert mode
+:map <leader>t :vsplit term://zsh<CR> :vertical resize 40<CR>i
+:map <leader>z :vertical resize 40<CR>
 :map <leader>r :so $MYVIMRC<CR>
 :map <leader>s :Scratch<CR>
 :map <leader>bj i`json:"" bson:""`<Esc>4F"a
