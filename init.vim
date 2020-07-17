@@ -45,7 +45,7 @@ nnoremap <leader>9 9gt
 " tab for cycling between last used buffer
 nnoremap <tab> <c-^>
 
-" file explorer
+" file explorer (Nerd tree like, but built in)
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
@@ -65,12 +65,15 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'bkad/CamelCaseMotion'
 	Plug 'mtth/scratch.vim'
 	Plug 'gcmt/taboo.vim'
+	Plug 'preservim/nerdtree'
 call plug#end()
 
 " PLUGIN SETTINGS
+" Taboo
 let g:taboo_tab_format = " %N:%f%m "
 let g:taboo_renamed_tab_format = " [%N:%l]%m "
 
+" Camel Case Motion
 let g:camelcasemotion_key = '<leader>'
 
 " vim is a colourscheme that lets the terminal's colourscheme come through
@@ -96,6 +99,9 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,scss EmmetInstall
 let g:user_emmet_expandabbr_key = '<C-e>'
 
+" NERDTree
+:let g:NERDTreeWinSize=22
+
 " CUSTOM KEYBINDINGS
 
 " Remap ctrl-s to save
@@ -120,7 +126,6 @@ nnoremap <S-CR> O<Esc>
 nnoremap _ cw_<Esc>
 :map <leader>h :noh<CR>
 :map <leader>y yyp
-:map <leader>f :Lexplore<CR>
 
 " open a terminal in a 40 char-width vsplit and go straight into insert mode
 :map <leader>t :vsplit term://zsh<CR> :vertical resize 40<CR>i
@@ -128,6 +133,8 @@ nnoremap _ cw_<Esc>
 :map <leader>r :so $MYVIMRC<CR>
 :map <leader>s :Scratch<CR>
 :map <leader>bj i`json:"" bson:""`<Esc>4F"a
+:map <leader>f :NERDTreeToggle<CR>
+:map <leader>n :NERDTreeRefreshRoot<CR>
 inoremap <c-z>z <Esc>zzi
 :tnoremap <Esc> <C-\><c-n>
 
