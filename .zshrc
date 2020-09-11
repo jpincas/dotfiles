@@ -6,9 +6,9 @@ export PATH=$PATH:/usr/local/bin/dart-sass
 export ZSH="/home/jon/.oh-my-zsh"
 
 # Pakk
-export PAKK_ENV="local"
+export PAKK_ENV="clouddev"
+export PAKK_SERVER_NAME="pakk.store"
 export CLOUDDEV_START_PORT=3000
-
 
 # Go
 export GOPATH=$HOME
