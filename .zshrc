@@ -106,7 +106,18 @@ export EDITOR="$VISUAL"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias nvim="nvim.appimage"
+case `uname` in
+  Darwin)
+	  alias nvim="nvim"
+  ;;
+  Linux)
+	  alias nvim="nvim.appimage"
+  ;;
+esac
+
+
+
+
 alias vim="nvim"
 alias v="nvim"
 alias sv="sudo nvim.appimage"
