@@ -3,7 +3,8 @@ export PATH=$PATH:$HOME/bin:/usr/local/bin:/home/jon/.local/bin
 export PATH=$PATH:/usr/local/bin/dart-sass
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jon/.oh-my-zsh"
+ZSH_DISABLE_COMPFIX="true"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Pakk
 export PAKK_ENV="clouddev"
