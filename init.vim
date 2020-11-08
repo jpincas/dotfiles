@@ -1,6 +1,7 @@
 " BASICS 
 
 set nocompatible
+set noswapfile
 let mapleader =  ' '
 set number
 set relativenumber
@@ -135,6 +136,8 @@ nnoremap _ cw_<Esc>
 :map <leader>bj i`json:"" bson:""`<Esc>4F"a
 :map <leader>f :NERDTreeToggle<CR>
 :map <leader>n :NERDTreeRefreshRoot<CR>
+:map <leader>0 "0p
+
 inoremap <c-z>z <Esc>zzi
 :tnoremap <Esc> <C-\><c-n>
 
