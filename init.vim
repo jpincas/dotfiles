@@ -62,7 +62,7 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'dense-analysis/ale'
 	Plug 'mattn/emmet-vim'
-	Plug 'elmcast/elm-vim'
+	" Plug 'elmcast/elm-vim'
 	Plug 'bkad/CamelCaseMotion'
 	Plug 'mtth/scratch.vim'
 	Plug 'gcmt/taboo.vim'
