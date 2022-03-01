@@ -47,7 +47,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 case `uname` in
   Darwin)
-	  alias nvim="nvim"
 	  alias vim="nvim"
 	  alias v="nvim"
 	  alias vimcfg="nvim ~/.config/nvim/init.vim"
@@ -57,19 +56,19 @@ case `uname` in
 	  export EDITOR="nvim"
   ;;
   Linux)
-	  alias nvim="nvim.appimage"
-	  alias vim="nvim.appimage"
-	  alias v="nvim.appimage"
-	  alias vimcfg="nvim.appimage ~/.config/nvim/init.vim"
-	  alias zshcfg="nvim.appimage ~/.zshrc"
-	  alias tmuxcfg="nvim.appimage ~/.tmux.conf"
-	  export VISUAL=nvim.appimage
-	  export EDITOR="nvim.appimage"
+	  alias vim="nvim"
+	  alias v="nvim"
+	  alias vimcfg="nvim ~/.config/nvim/init.vim"
+	  alias zshcfg="nvim ~/.zshrc"
+	  alias tmuxcfg="nvim ~/.tmux.conf"
+	  export VISUAL=nvim
+	  export EDITOR="nvim"
   ;;
 esac
 
 alias mykill="pkill -u $USER"
 alias pakk="cd ~/src/github.com/dogpakk/pakk"
+alias gotestfunc="go test -run"
 
 # Preserve MANPATH if you already defined it somewhere in your config.
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
