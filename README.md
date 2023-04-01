@@ -13,3 +13,4 @@
 - https://www.youtube.com/watch?v=vdn_pKJUda8
 - https://github.com/romkatv/powerlevel10k
 - https://www.josean.com/posts/terminal-setup
+- https://github.com/bluz71/vim-nightfly-colors
