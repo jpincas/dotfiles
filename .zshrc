@@ -109,5 +109,4 @@ if [ -f '/home/jon/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jon/google-cl
 if [ -f '/home/jon/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jon/google-cloud-sdk/completion.zsh.inc'; fi
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-source /Users/jon/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
