@@ -1,24 +1,36 @@
 " BASICS 
 
+" Appearance
+set termguicolors
+set background="dark"
+set signcolumn
+set nocursorline
+set number
+set relativenumber
+set nowrap
+
 set nocompatible
 set noswapfile
 let mapleader =  ' '
-set number
-set relativenumber
 au TermOpen * setlocal nonumber norelativenumber
 syntax enable
 filetype plugin on
-set nowrap
+
 " Allow dirty buffers in the background
 set hidden
+
 " Bassically a fuzzy finder
 set path+=**
+
 " Stop autocomplete pooping up a help pane
 set completeopt-=preview
+
 " use indent files in the /indent directory
 filetype plugin indent on
+
 " set splits to open on right by default
 set splitright
+set splitbelow
 
 " NAVIGATION
 			
@@ -57,19 +69,27 @@ let g:netrw_winsize = -20
 
 call plug#begin('~/local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
-	Plug 'arcticicestudio/nord-vim'
 	Plug 'vim-scripts/Toggle'
+	Plug 'vim-scripts/ReplaceWithRegister'
+	Plug 'numToStr/Comment.nvim'
 	Plug 'tpope/vim-surround'
 	Plug 'dense-analysis/ale'
-	Plug 'mattn/emmet-vim'
 	Plug 'elmcast/elm-vim'
 	Plug 'bkad/CamelCaseMotion'
-	Plug 'mtth/scratch.vim'
 	Plug 'gcmt/taboo.vim'
 	Plug 'preservim/nerdtree'
+	Plug 'bluz71/vim-nightfly-guicolors'
+	Plug 'ryanoasis/vim-devicons'
+	Plug 'github/copilot.vim'
 call plug#end()
 
+colorscheme nightfly
+let g:lightline = { 'colorscheme': 'nightfly' }
+
 " PLUGIN SETTINGS
+"
+lua require('Comment').setup()
+"
 " Taboo
 let g:taboo_tab_format = " %N:%f%m "
 let g:taboo_renamed_tab_format = " [%N:%l]%m "
@@ -77,13 +97,6 @@ let g:taboo_renamed_tab_format = " [%N:%l]%m "
 " Camel Case Motion
 let g:camelcasemotion_key = '<leader>'
 
-" vim is a colourscheme that lets the terminal's colourscheme come through
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
-
-colorscheme nord
-"
 " ale
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
@@ -145,9 +158,9 @@ inoremap <c-z>z <Esc>zzi
 command! MakeTags !ctags -R .
 
 " Cursor line only on active splits
-augroup CursorLineOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-augroup END  
+" augroup CursorLineOnlyInActiveWindow
+ " autocmd!
+ " autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+ " autocmd WinLeave * setlocal nocursorline
+"augroup END  
 
