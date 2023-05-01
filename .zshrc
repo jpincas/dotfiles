@@ -8,6 +8,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$PATH:$HOME/bin:/usr/local/bin:/home/jon/.local/bin
 export PATH=$PATH:/usr/local/bin/dart-sass
+export PATH=$PATH:/usr/local/nvim-osx64/bin
 
 # Path to your oh-my-zsh installation.
 ZSH_DISABLE_COMPFIX="true"
