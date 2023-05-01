@@ -108,9 +108,6 @@ if [ -f '/home/jon/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jon/google-cl
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/jon/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jon/google-cloud-sdk/completion.zsh.inc'; fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /Users/jon/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/jon/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/jon/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
