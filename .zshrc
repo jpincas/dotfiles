@@ -17,6 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PAKK_ENV="clouddev"
 export PAKK_SERVER_NAME="pakk.store"
 export PORT=3000
+export PAKK_NODE="jon-dev"
 
 # Go
 export GOPATH=$HOME
