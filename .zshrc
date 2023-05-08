@@ -8,15 +8,15 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$PATH:$HOME/bin:/usr/local/bin:/home/jon/.local/bin
 export PATH=$PATH:/usr/local/bin/dart-sass
-export PATH=$PATH:/usr/local/nvim-osx64/bin
+export PATH=$PATH:/usr/local/nvim-macos/bin
 
 # Path to your oh-my-zsh installation.
 ZSH_DISABLE_COMPFIX="true"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Pakk
-export PAKK_ENV="clouddev"
-export PAKK_SERVER_NAME="pakk.store"
+export PAKK_ENV="local"
+export PAKK_SERVER_NAME="pakk.dev"
 export PORT=3000
 export PAKK_NODE="jon-dev"
 
