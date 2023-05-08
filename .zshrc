@@ -1,14 +1,8 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$PATH:$HOME/bin:/usr/local/bin:/home/jon/.local/bin
 export PATH=$PATH:/usr/local/bin/dart-sass
 export PATH=$PATH:/usr/local/nvim-macos/bin
+# export PATH=$PATH:/usr/local/nvim-linux64/bin
 
 # Path to your oh-my-zsh installation.
 ZSH_DISABLE_COMPFIX="true"
@@ -19,6 +13,7 @@ export PAKK_ENV="local"
 export PAKK_SERVER_NAME="pakk.dev"
 export PORT=3000
 export PAKK_NODE="jon-dev"
+export SR_NODE="jon-dev"
 
 # Go
 export GOPATH=$HOME
@@ -31,7 +26,7 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
@@ -83,9 +78,6 @@ alias gotestfunc="go test -run"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
-# Use starship as prompt
-# eval "$(starship init zsh)"
-
 # npm
 export PATH=~/.npm-global/bin:$PATH
 
@@ -100,13 +92,9 @@ export COLORTERM=truecolor
 export TERM=xterm-256color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PAKK_SCRIPT_API='https://tapaslunch-clouddev.pakk.io:3010/adminapi'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/jon/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jon/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/jon/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jon/google-cloud-sdk/completion.zsh.inc'; fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
