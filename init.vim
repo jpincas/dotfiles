@@ -9,6 +9,8 @@ set number
 set relativenumber
 set nowrap
 
+set shell=/usr/bin/zsh
+
 set nocompatible
 set noswapfile
 let mapleader =  ' '
