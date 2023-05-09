@@ -8,13 +8,13 @@ set nocursorline
 set number
 set relativenumber
 set nowrap
-
-set shell=/usr/bin/zsh
+set shell=zsh
 
 set nocompatible
 set noswapfile
 let mapleader =  ' '
 au TermOpen * setlocal nonumber norelativenumber
+
 syntax enable
 filetype plugin on
 
@@ -81,8 +81,8 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'gcmt/taboo.vim'
 	Plug 'preservim/nerdtree'
 	Plug 'bluz71/vim-nightfly-guicolors'
-	Plug 'ryanoasis/vim-devicons'
 	Plug 'github/copilot.vim'
+	Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 colorscheme nightfly

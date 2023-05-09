@@ -13,7 +13,7 @@ export PAKK_ENV="local"
 export PAKK_SERVER_NAME="pakk.dev"
 export PORT=3000
 export PAKK_NODE="jon-dev"
-export SR_NODE="jon-dev"
+export NODE_NAME="jon-dev"
 
 # Go
 export GOPATH=$HOME
@@ -37,8 +37,8 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -86,7 +86,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 #
 
-#Terminal Settings
+# Terminal Settings
 export COLORTERM=truecolor
 # Seens that the TERM needs to be xterm rather than tmux else it starts repeating commands with a %
 export TERM=xterm-256color
