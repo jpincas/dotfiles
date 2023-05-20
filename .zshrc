@@ -11,7 +11,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Pakk
 export PAKK_ENV="local"
 export PAKK_SERVER_NAME="pakk.dev"
-export PORT=3000
 export PAKK_NODE="jon-dev"
 export NODE_NAME="jon-dev"
 
