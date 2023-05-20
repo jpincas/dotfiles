@@ -12,7 +12,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export PAKK_ENV="local"
 export PAKK_SERVER_NAME="pakk.dev"
 export PAKK_NODE="jon-dev"
-export NODE_NAME="jon-dev"
+
+export SR_NODE="jon-dev"
+export SR_ENV="dev"
 
 # Go
 export GOPATH=$HOME
