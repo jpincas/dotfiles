@@ -2,7 +2,7 @@
 export PATH=$PATH:$HOME/bin:/usr/local/bin:/home/jon/.local/bin
 export PATH=$PATH:/usr/local/bin/dart-sass
 export PATH=$PATH:/usr/local/nvim-macos/bin
-# export PATH=$PATH:/usr/local/nvim-linux64/bin
+export PATH=$PATH:/usr/local/nvim-linux64/bin
 
 # Path to your oh-my-zsh installation.
 ZSH_DISABLE_COMPFIX="true"

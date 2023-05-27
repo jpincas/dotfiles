@@ -1,7 +1,0 @@
-pakk.local, pakk2.local, pakk-admin.local {
-	reverse_proxy :3000
-}
-
-scoutreach.local {
-	reverse_proxy :3001
-}
