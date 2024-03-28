@@ -100,6 +100,7 @@ let g:taboo_renamed_tab_format = " [%N:%l]%m "
 let g:camelcasemotion_key = '<leader>'
 
 " ale
+" Set the dialet for sqlfluff to BigQuery
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 	\ 'css': ['prettier'],
@@ -107,8 +108,22 @@ let g:ale_fixers = {
 	"\ 'html': ['html-beautify'],
 	\ 'python': ['yapf'],
 	\ 'json': ['prettier'],
+	\ 'sql': ['sqlfluff'],
 	\ 'go': ['gofmt', 'goimports']
 	\ }
+
+let g:ale_linters = {
+  \ 'go': ['gopls'],
+  \ 'sql': ['sqlfluff'],
+  \}
+
+
+" Gopls options for linting with Ale - found this example in the source code
+" https://github.com/dense-analysis/ale/pull/3571/commits/26b92f73b5e0f54b0053cf2bd69b79f4f01afe91
+let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {
+        \ 'composites': v:false,
+        \ }}
+
 
 " emmet
 let g:user_emmet_install_global = 0
