@@ -92,6 +92,7 @@ export NVM_DIR="$HOME/.nvm"
 export COLORTERM=truecolor
 # Seens that the TERM needs to be xterm rather than tmux else it starts repeating commands with a %
 # export TERM=xterm-256color
+export TERM=xterm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
