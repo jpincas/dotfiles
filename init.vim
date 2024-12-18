@@ -105,7 +105,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 	\ 'css': ['prettier'],
 	\ 'scss': ['prettier'],
-	"\ 'html': ['html-beautify'],
+	\ 'html': ['prettier'],
 	\ 'python': ['yapf'],
 	\ 'json': ['prettier'],
 	\ 'sql': ['sqlfluff'],
@@ -126,9 +126,9 @@ let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {
 
 
 " emmet
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss EmmetInstall
-let g:user_emmet_expandabbr_key = '<C-e>'
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css,scss EmmetInstall
+" let g:user_emmet_expandabbr_key = '<C-e>'
 
 " NERDTree
 :let g:NERDTreeWinSize=22
