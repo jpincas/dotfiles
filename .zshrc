@@ -103,6 +103,7 @@ if [ -f '/home/jon/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jon/google-cl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/jon/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jon/google-cloud-sdk/completion.zsh.inc'; fi
+
 . "/Users/jon/.deno/env"
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
