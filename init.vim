@@ -109,12 +109,16 @@ let g:ale_fixers = {
 	\ 'python': ['yapf'],
 	\ 'json': ['prettier'],
 	\ 'sql': ['sqlfluff'],
-	\ 'go': ['gofmt', 'goimports']
+	\ 'go': ['gofmt', 'goimports'],
+	\ 'typescript': ['deno'],
+	\ 'typescriptreact': ['deno']
 	\ }
 
 let g:ale_linters = {
   \ 'go': ['gopls'],
   \ 'sql': ['sqlfluff'],
+  \ 'typescript': ['deno'],
+  \ 'typescriptreact': ['deno']
   \}
 
 
