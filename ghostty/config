@@ -1,0 +1,6 @@
+font-family = "MesloLGS NF"
+background = 031627
+window-padding-balance = false
+window-padding-x = 0 
+window-padding-y = 0
+keybind = global:cmd+§=new_window
