@@ -1,9 +1,11 @@
 font-family = "MesloLGS NF"
 font-size = 13
 font-thicken = true
-macos-titlebar-style = tabs
 theme = /Users/jon/dotfiles/ghostty/themes/coolnight
 window-padding-color = extend
 window-padding-x = 0 
 window-padding-y = 0
 term = "xterm-256color"
+macos-non-native-fullscreen = false
+adjust-cell-width = "-5%"
+adjust-cell-height = "5%"
