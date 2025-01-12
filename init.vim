@@ -109,7 +109,7 @@ let g:ale_fixers = {
 	\ 'python': ['yapf'],
 	\ 'json': ['prettier'],
 	\ 'sql': ['sqlfluff'],
-	\ 'go': ['gofmt', 'goimports'],
+	\ 'go': ['goimports'],
 	\ 'typescript': ['deno'],
 	\ 'typescriptreact': ['deno']
 	\ }
@@ -128,6 +128,8 @@ let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {
         \ 'composites': v:false,
         \ }}
 
+" Set ALE to display lint errors in the Quickfix list
+let g:ale_set_quickfix = 1
 
 " emmet
 " let g:user_emmet_install_global = 0
@@ -135,7 +137,7 @@ let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {
 " let g:user_emmet_expandabbr_key = '<C-e>'
 
 " NERDTree
-:let g:NERDTreeWinSize=22
+:let g:NERDTreeWinSize=26
 
 " CUSTOM KEYBINDINGS
 
@@ -184,4 +186,3 @@ command! MakeTags !ctags -R .
  " autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
  " autocmd WinLeave * setlocal nocursorline
 "augroup END  
-
