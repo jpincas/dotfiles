@@ -2,19 +2,16 @@
 
 " Appearance
 set termguicolors
-set background="dark"
 set signcolumn
 set nocursorline
 set number
 set relativenumber
 set nowrap
 set shell=zsh
-
 set nocompatible
 set noswapfile
 let mapleader =  ' '
 au TermOpen * setlocal nonumber norelativenumber
-
 syntax enable
 filetype plugin on
 
@@ -24,11 +21,11 @@ set hidden
 " Bassically a fuzzy finder
 set path+=**
 
-" Stop autocomplete pooping up a help pane
+" Stop autocomplete poping up a help pane
 set completeopt-=preview
 
 " use indent files in the /indent directory
-filetype plugin indent on
+" filetype plugin indent on
 
 " set splits to open on right by default
 set splitright
@@ -60,13 +57,6 @@ nnoremap <leader>9 9gt
 " tab for cycling between last used buffer
 nnoremap <tab> <c-^>
 
-" file explorer (Nerd tree like, but built in)
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = -20
-
 " PLUGIN MANAGER
 
 call plug#begin('~/local/share/nvim/plugged')
@@ -75,7 +65,7 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'vim-scripts/ReplaceWithRegister'
 	Plug 'numToStr/Comment.nvim'
 	Plug 'tpope/vim-surround'
-	Plug 'dense-analysis/ale'
+	" Plug 'dense-analysis/ale'
 	Plug 'elmcast/elm-vim'
 	Plug 'bkad/CamelCaseMotion'
 	Plug 'gcmt/taboo.vim'
@@ -83,6 +73,7 @@ call plug#begin('~/local/share/nvim/plugged')
 	Plug 'bluz71/vim-nightfly-guicolors'
 	Plug 'github/copilot.vim'
 	Plug 'ryanoasis/vim-devicons'
+	Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 colorscheme nightfly
@@ -99,43 +90,6 @@ let g:taboo_renamed_tab_format = " [%N:%l]%m "
 " Camel Case Motion
 let g:camelcasemotion_key = '<leader>'
 
-" ale
-" Set the dialet for sqlfluff to BigQuery
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-	\ 'css': ['prettier'],
-	\ 'scss': ['prettier'],
-	\ 'html': ['prettier'],
-	\ 'python': ['yapf'],
-	\ 'json': ['prettier'],
-	\ 'sql': ['sqlfluff'],
-	\ 'go': ['goimports'],
-	\ 'typescript': ['deno'],
-	\ 'typescriptreact': ['deno']
-	\ }
-
-let g:ale_linters = {
-  \ 'go': ['gopls'],
-  \ 'sql': ['sqlfluff'],
-  \ 'typescript': ['deno'],
-  \ 'typescriptreact': ['deno']
-  \}
-
-
-" Gopls options for linting with Ale - found this example in the source code
-" https://github.com/dense-analysis/ale/pull/3571/commits/26b92f73b5e0f54b0053cf2bd69b79f4f01afe91
-let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {
-        \ 'composites': v:false,
-        \ }}
-
-" Set ALE to display lint errors in the Quickfix list
-let g:ale_set_quickfix = 1
-
-" emmet
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css,scss EmmetInstall
-" let g:user_emmet_expandabbr_key = '<C-e>'
-
 " NERDTree
 :let g:NERDTreeWinSize=26
 
@@ -150,12 +104,8 @@ vnoremap <c-s> <Esc>:w<CR>
 " The next two lines are copy/paste from SO
 " to stop some kind of interference in command mode
 :autocmd CmdwinEnter * nnoremap <CR> <CR>
-:autocmd BufReadPost quickfix nnoremap <CR> <CR>
+" :autocmd BufReadPost quickfix nnoremap <CR> <CR>
 "
-" " And to make S-Enter work you need to make some changes to how Alacritty
-" sends key combos
-" - { key: Return,   mods: Shift,   chars: '\x1b[13;2u' }
-" - { key: Return,   mods: Control, chars: '\x1b[13;5u' }
 nnoremap <CR> o<Esc>
 nnoremap <S-CR> O<Esc>
 
@@ -163,6 +113,8 @@ nnoremap <S-CR> O<Esc>
 nnoremap _ cw_<Esc>
 :map <leader>h :noh<CR>
 :map <leader>y yyp
+" Close a buffer without closing the split
+nnoremap <leader>d :bnext \| if bufnr("#") != -1 \| bdelete # \| else \| enew \| endif<CR>
 
 " open a terminal in a 40 char-width vsplit and go straight into insert mode
 :map <leader>t :vsplit term://zsh<CR> :vertical resize 40<CR>i
@@ -180,9 +132,5 @@ inoremap <c-z>z <Esc>zzi
 " Not sure
 command! MakeTags !ctags -R .
 
-" Cursor line only on active splits
-" augroup CursorLineOnlyInActiveWindow
- " autocmd!
- " autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
- " autocmd WinLeave * setlocal nocursorline
-"augroup END  
+lua vim.lsp.enable('gopls')
+
