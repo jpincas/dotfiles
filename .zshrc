@@ -1,10 +1,8 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/jon/.zsh/completions:"* ]]; then export FPATH="/Users/jon/.zsh/completions:$FPATH"; fi
-# If you come from bash you might have to change your $PATH.
 export PATH=$PATH:$HOME/bin:/usr/local/bin:/home/jon/.local/bin
 export PATH=$PATH:/usr/local/bin/dart-sass
 export PATH=$PATH:/usr/local/nvim-macos/bin
 export PATH=$PATH:/usr/local/nvim-linux64/bin
+export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 ZSH_DISABLE_COMPFIX="true"
