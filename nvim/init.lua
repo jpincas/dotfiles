@@ -83,11 +83,12 @@ call plug#begin('~/local/share/nvim/plugged')
     Plug 'bkad/CamelCaseMotion'
     Plug 'gcmt/taboo.vim'
     Plug 'preservim/nerdtree'
-    Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'github/copilot.vim'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'dense-analysis/ale'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'EdenEast/nightfox.nvim'
+    " Plug 'bluz71/vim-nightfly-guicolors'
 call plug#end()
 ]]
 --
@@ -117,18 +118,15 @@ vim.g.ale_linters = {
 }
 
 -- ALE Keybindings
--- Go to next error: Ctrl+]
--- Go to previous error: Ctrl+[
--- Go to definition: gd
--- Hover: K
-vim.keymap.set("n", "<c-]>", ":ALENext<CR>")
-vim.keymap.set("n", "<c-[>", ":ALEPrevious<CR>")
+vim.keymap.set("n", "]", ":ALENext<CR>")
+vim.keymap.set("n", "[", ":ALEPrevious<CR>")
 vim.keymap.set("n", "gd", ":ALEGoToDefinition<CR>")
-vim.keymap.set("n", "K", ":ALEHover<CR>")
+vim.keymap.set("n", "gh", ":ALEHover<CR>")
+vim.keymap.set("n", "gf", ":ALEFindReferences<CR>")
 
 -- Colourscheme
-vim.cmd("colorscheme nightfly")
-vim.g.lightline = { colorscheme = "nightfly" }
+vim.g.lightline = { colorscheme = "duskfox" }
+vim.cmd("colorscheme duskfox")
 
 -- Comment.nvim setup
 require("Comment").setup()
@@ -142,7 +140,7 @@ vim.g.camelcasemotion_key = "<leader>"
 
 -- NERDTree
 vim.g.NERDTreeWinSize = 26
-
+--
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
@@ -165,5 +163,4 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-
 
